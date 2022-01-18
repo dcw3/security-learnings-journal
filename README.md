@@ -28,3 +28,11 @@ Thu, Jan 13:
 Fri, Jan 14:
 
 - Was focused on Focusmate today, helped that Brittany was next to me. Slow progress on understanding Tomcat. It feels pretty clunky and unintuitive to use so far, and the docs are pretty technical. I only got as far as setting up the basic ant stuff and the basic admin username/password, and starting to set up my basic webapp.
+
+Sat, Jan 15:
+
+- Sorry, missed two updates. I did the Focusmate session working on my Tomcat server. I finally got something "working" as I just copied the sample webapp and modified the files a tad.
+
+Sun, Jan 16:
+
+- Tried getting log4j to run in my Tomcat server but failed. It seems like the Java import system is pretty different from Python, it makes me appreciate pip and I'm guessing maven would help with this too. Spent some time digging around looking for the right things to import. Found some promising jars but still very confused about how I'm supposed to easily know or find the appropriate jars to import, or where to import them.
