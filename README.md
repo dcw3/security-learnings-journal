@@ -36,3 +36,7 @@ Sat, Jan 15:
 Sun, Jan 16:
 
 - Tried getting log4j to run in my Tomcat server but failed. It seems like the Java import system is pretty different from Python, it makes me appreciate pip and I'm guessing maven would help with this too. Spent some time digging around looking for the right things to import. Found some promising jars but still very confused about how I'm supposed to easily know or find the appropriate jars to import, or where to import them.
+
+Mon, Jan 17:
+
+- Some house issues caused me to miss update today, sorry.
