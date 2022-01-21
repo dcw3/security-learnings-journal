@@ -45,6 +45,10 @@ Tue, Jan 18:
 
 - I spent a rage-inducing 50 minutes making zero progress on the Tomcat server import errors. At least I figured out that Tomcat should already come with the necessary jars for the HTTPServlet class... But the way ant is set up is totally unintuitive to me, as it doesn't even copy over the basic index.html file when building. WHY????? And, when compiling, ant does seem to verify that it can find the imported classes, yet when that compiled and built software is running in Tomcat it suddenly can't find that class anymore. I'm getting desperate, so I've started downloading and setting up Eclipse. Perhaps it will be easier. I will also post on Facebook asking for help haha.
 
-Fri, Jan 19:
+Wed, Jan 19:
 
 - Spotted an error in my build.xml file, but other than that no progress. I did, however, connect with Joe and pushed my code to Git for him to take a look. He is sending me a working jetty app of his, which I will use as a reference going forward.
+
+Thu, Jan 20:
+
+- Did a terrible job focusing today, but took a look over Joe's jetty project. It looks like he's basically using javac directly, so his project structure is a bit different than mine. However, it suggests I should probably understand the details of javac, and how ant relates to javac, in order to fix my compilation errors.
