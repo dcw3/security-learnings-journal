@@ -52,3 +52,11 @@ Wed, Jan 19:
 Thu, Jan 20:
 
 - Did a terrible job focusing today, but took a look over Joe's jetty project. It looks like he's basically using javac directly, so his project structure is a bit different than mine. However, it suggests I should probably understand the details of javac, and how ant relates to javac, in order to fix my compilation errors.
+
+Fri, Jan 21:
+
+- No update, sorry. Was busy tonight with family stuff.
+
+Sat, Jan 22:
+
+- Started working with jetty today! Only spent a short amount of time, was not focused enough. So far, it's easier than Tomcat and I'll continue with it instead of Tomcat.
