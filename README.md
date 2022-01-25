@@ -60,3 +60,11 @@ Fri, Jan 21:
 Sat, Jan 22:
 
 - Started working with jetty today! Only spent a short amount of time, was not focused enough. So far, it's easier than Tomcat and I'll continue with it instead of Tomcat.
+
+Sun, Jan 23:
+
+- Again, no update, sorry.
+
+Mon, Jan 24:
+
+- lol, finally got jetty working! Turns out that my issue was following a log4j v1 tutorial when trying to use log4j v2. I blame unclear error messages, but I should have known to be careful about basics like versioning, and also I should know better than to assume that the error message tells me the source of the problem. I also got log4j working. Will start learning about the LDAP exploitation tomorrow! Thanks so much to Joe fro helping
