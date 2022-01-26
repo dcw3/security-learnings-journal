@@ -67,4 +67,9 @@ Sun, Jan 23:
 
 Mon, Jan 24:
 
-- lol, finally got jetty working! Turns out that my issue was following a log4j v1 tutorial when trying to use log4j v2. I blame unclear error messages, but I should have known to be careful about basics like versioning, and also I should know better than to assume that the error message tells me the source of the problem. I also got log4j working. Will start learning about the LDAP exploitation tomorrow! Thanks so much to Joe fro helping
+- lol, finally got jetty working! Turns out that my issue was following a log4j v1 tutorial when trying to use log4j v2. I blame unclear error messages, but I should have known to be careful about basics like versioning, and also I should know better than to assume that the error message tells me the source of the problem. I also got log4j working. Will start learning about the LDAP exploitation tomorrow! Thanks so much to Joe for helping
+
+Tue, Jan 25:
+
+- Got to meet, by chance, a really cool security person on Focusmate yesterday! They recommended that I look for people in my area to learn security from/with, including local OWASP chapters. There is one in New York, though it hasn't had a meeting in the past few months, presumably due to omicron, though I'll keep an eye out for meetings there. It also gave me the idea to try and go to a security conference, perhaps with some EA people, for fun.
+- Today I worked on learning about LDAP and JNDI and the log4j exploit. LDAP seems pretty intuitive, as a way to access and modify directory structures, though I still don't know any details about actually running such a server. I also looked through some of itzbenz's example Log4Shell exploit. It somewhat made sense to me.
