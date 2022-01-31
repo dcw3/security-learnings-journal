@@ -74,3 +74,9 @@ Tue, Jan 25:
 - Got to meet, by chance, a really cool security person on Focusmate yesterday! They recommended that I look for people in my area to learn security from/with, including local OWASP chapters. There is one in New York, though it hasn't had a meeting in the past few months, presumably due to omicron, though I'll keep an eye out for meetings there. It also gave me the idea to try and go to a security conference, perhaps with some EA people, for fun.
 - Today I worked on learning about LDAP and JNDI and the log4j exploit. LDAP seems pretty intuitive, as a way to access and modify directory structures, though I still don't know any details about actually running such a server. I also looked through some of itzbenz's example Log4Shell exploit. It somewhat made sense to me.
 - Tried inserting a JNDI query on my local Jetty server and it didn't do anything, I think. Next steps are probably to figure out how to set up my own LDAP server (or copy itzbenz's), and then figure out what's missing in my local Jetty server that's causing the JNDI to fail
+
+Sun, Jan 30:
+
+- I took a break for a few days, I think it was good for me to recharge. :)
+- Today I migrated over from my super-jank jetty setup to just using my Tomcat and ant setup. The "error" I was seeing before was just log4j version issues, so migrating didn't end up being very difficult. I am also getting a bit more comfortable with the build.xml in ant.
+- I also started looking at itzbenz's sample attack LDAP server. Next session I hope to get log4j logging to an external file so I can inspect the results, then I will try setting up a sample LDAP server.
