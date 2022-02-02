@@ -80,3 +80,7 @@ Sun, Jan 30:
 - I took a break for a few days, I think it was good for me to recharge. :)
 - Today I migrated over from my super-jank jetty setup to just using my Tomcat and ant setup. The "error" I was seeing before was just log4j version issues, so migrating didn't end up being very difficult. I am also getting a bit more comfortable with the build.xml in ant.
 - I also started looking at itzbenz's sample attack LDAP server. Next session I hope to get log4j logging to an external file so I can inspect the results, then I will try setting up a sample LDAP server.
+
+Mon, Jan 31:
+
+- I fixed my import error in Tomcat today, so my Tomcat servlet works. I'm honestly not sure where I was supposed to figure out that javax had been renamed to jakarta haha. Now working on getting log4j to log to an external file.
