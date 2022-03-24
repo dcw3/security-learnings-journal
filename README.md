@@ -92,3 +92,9 @@ Wed, Feb 2:
 Tue, Mar 22:
 
 - Woah it's been a while, sorry about that. Today I dusted the cobwebs off the log4j project, happy to see logging works fine. I looked into learning about Active Directory before doing this LDAP server, but after a bit of Googling, that seems like overkill. I decided to proceed with learning LDAP through the ldap.com tutorial, which seems fairly readable, and I spent a bit of time getting started on that.
+
+Wed, Mar 23:
+
+- Learned some basic LDAP concepts, such as DN's, RDN's, searches, and attributes.
+
+
