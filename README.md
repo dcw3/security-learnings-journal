@@ -97,4 +97,12 @@ Wed, Mar 23:
 
 - Learned some basic LDAP concepts, such as DN's, RDN's, searches, and attributes.
 
+Sat, Mar 26:
 
+- Read more about LDAP schemas. First read about OID's, in which I learned that OID's are meant to be hierarchical but globally unique. Therefore, any organization should request its own OID base. Next learned about attribute syntaxes, which are the LDAP equivalent of data types. It seems like all the expected types are available, but specified with somewhat-obscure OID's. Similarly goes for matching rules. Doesn't seem like I will ever need to worry about creating these, just using them. Attribute types seem slightly more useful to know how to create, but after reading the LDAP docs I'm still pretty confused about what a typical LDAP server setup looks like, though I do have a much better grasp of some of the basic concepts like OID's, and schema items each being a description of a data type, comparison rule, or class.
+- Also, realized that the UnboundID LDAP SDK for Java is meant to faciliate LDAP clients, not run an LDAP server lol. So now I need to look into how to run an LDAP server.
+- Next thing to read is how to use the in-memory directory server from UnboundID https://docs.ldap.com/ldap-sdk/docs/in-memory-directory-server.html
+
+Wed, Apr 6:
+
+- Learned more about the in-memory directory server from UnboundID LDAP. Also learned that the LDAP server used by benz is not that legit, since it's manually intercepting the LDAP request. Therefore, I'm planning to take a different approach and set up the actual LDAP server, not using benz approach. That way I'm hoping to get a bit more understanding of how LDAP servers can work.
