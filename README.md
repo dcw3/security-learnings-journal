@@ -106,3 +106,13 @@ Sat, Mar 26:
 Wed, Apr 6:
 
 - Learned more about the in-memory directory server from UnboundID LDAP. Also learned that the LDAP server used by benz is not that legit, since it's manually intercepting the LDAP request. Therefore, I'm planning to take a different approach and set up the actual LDAP server, not using benz approach. That way I'm hoping to get a bit more understanding of how LDAP servers can work.
+
+Thu, Apr 7:
+
+- Learned that JNDI is not the same thing as LDAP LOL. Also realized that setting up the LDAP server to handle the JNDI query properly is non trivial. Saw another implementation of log4Shell and like itzbenz's, it does not use a legit LDAP mechanism to respond to the JNDI but instead hijacks the request early on. https://github.com/leonjza/log4jpwn/blob/master/pwn.py Therefore, I'm suspecting I either need to understand LDAP better, or just take the hijack approach.
+
+Fri, Apr 8:
+
+- Learned about how JNDI can be used with LDAP, and better understood how to write my own LDAP server to cooperate with a JNDI query. Still a bit confused about why itzbenz and others are using intercepts intead of the native LDAP API because it seems like JNDI should play pretty nicely with LDAP. However, I'm still unclear on how to Java class served from LDAP server should be encoded.
+
+
