@@ -115,4 +115,7 @@ Fri, Apr 8:
 
 - Learned about how JNDI can be used with LDAP, and better understood how to write my own LDAP server to cooperate with a JNDI query. Still a bit confused about why itzbenz and others are using intercepts intead of the native LDAP API because it seems like JNDI should play pretty nicely with LDAP. However, I'm still unclear on how to Java class served from LDAP server should be encoded.
 
+Sun, Jun 19:
 
+- Fell off the horse again, in regards to updating this regularly. In the past few months I've been reading "The Art of Software Security Assessment", a book by Dowd, McDonald and Schuh. I read the sections on how to structure a software security audit and general strategies to build understanding of a codebase and identify weak points. However, I will probably need a second read-through of these sections in order to better internalize them.
+- Today I spent time reading the chapter about the IP protocol. The book went over some examples of flawed C code which poorly handled IP packets, particularly with how the IP header information was processed. It seems like accidental buffer overflows or unsigned integer underflows are very easy to accidentally do in C!
