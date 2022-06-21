@@ -119,3 +119,9 @@ Sun, Jun 19:
 
 - Fell off the horse again, in regards to updating this regularly. In the past few months I've been reading "The Art of Software Security Assessment", a book by Dowd, McDonald and Schuh. I read the sections on how to structure a software security audit and general strategies to build understanding of a codebase and identify weak points. However, I will probably need a second read-through of these sections in order to better internalize them.
 - Today I spent time reading the chapter about the IP protocol. The book went over some examples of flawed C code which poorly handled IP packets, particularly with how the IP header information was processed. It seems like accidental buffer overflows or unsigned integer underflows are very easy to accidentally do in C!
+
+Mon, Jun 20:
+
+- Today I listened to some of an 80K podcast with Nova DasSarma about information security and AI. One interesting thing I learned is how military software is sometimes developed in SCIF's, which block wireless communication and require even basic stuff like code documentation to all be carried inside.
+
+
