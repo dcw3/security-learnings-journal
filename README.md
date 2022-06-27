@@ -124,4 +124,8 @@ Mon, Jun 20:
 
 - Today I listened to some of an 80K podcast with Nova DasSarma about information security and AI. One interesting thing I learned is how military software is sometimes developed in SCIF's, which block wireless communication and require even basic stuff like code documentation to all be carried inside.
 
+Sun, Jun 26:
+
+- Today I reviewed RSA and Diffie-Hellman. I forced myself to write them from memory, which I hope will help me remember. I also started reading Kaspersky's recent report on common TTP's of modern ransomware groups. It seems like the most common entrypoints are insecurely configured RDP gateways, phishing with malicious attachments or links, and external-facing services like VPN's, Citrix gateways, etc.
+
 
