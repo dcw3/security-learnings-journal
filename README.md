@@ -126,6 +126,24 @@ Mon, Jun 20:
 
 Sun, Jun 26:
 
-- Today I reviewed RSA and Diffie-Hellman. I forced myself to write them from memory, which I hope will help me remember. I also started reading Kaspersky's recent report on common TTP's of modern ransomware groups. It seems like the most common entrypoints are insecurely configured RDP gateways, phishing with malicious attachments or links, and external-facing services like VPN's, Citrix gateways, etc.
+- Today I reviewed RSA and Diffie-Hellman. I forced myself to write them from memory, which I hope will help me remember. I also started reading Kaspersky's recent report on common TTP's of modern ransomware groups. It seems like the most common entrypoints are insecurely configured RDP gateways, phishing with malicious attachments or links, and external-facing services like VPN's, Citrix gateways, etc. Also, it's interesting that Kaspersky lists some recommended things to monitor as anomalous activity. I'm guessing that Bloomberg already monitors such things, and that the Threat Detection team would be on top of such reports.
+
+Mon, Jul 4:
+
+- Continuing to read Kaspersky's report on ransomware groups. One interesting thing is that malicious Microsoft Office macros are still a very common method, even though they are well known at this point and Microsoft Office explicitly asks you whether to enable macros. It seems, at least, that the step from user opening attachment to attacker gaining a system shell continues to be non-trivial, since the macro attack seems rather non-optimal to me from a usability perspective, as the user must first decide to open the attachment and also decide to enable macros in the document. I'd be curious to see what percent of users open the email but decide not to open attachment, or decide not to enable macros.
+- Kaspersky notes that alarms should be raised if a trusted file handler such as Microsoft Office, PDF, etc. is seen running a shell, downloading a file, executing a library, or opening a network connection. Note that the "malicious file" method is almost always through phishing. If you find a vulnerable RDP opening or other public opening, then you can go directly to exploitation without a macro.
+- Interestingly Kaspersky dedicates a section to general "Command and Scripting Interpreter", which seems a bit obvious since it makes sense that you'd eventually want a shell. I did learn about Empire Powershell, though I'm still a bit unclear about what its purpose is.
+- WMI (Windows Management Instrumentation) is an orchestration tool for Windows, often used by sysadmins (reminds me of something like Terraform). Often also used by attackers to execute commands, such as deleting backups during ransomware attacks. It's very powerful: for example, it can be used to search through all running processes and delete any matching a given name or containing a certain word. It's often used for lateral movement, with commands of the form wmic /node:...
+- Also, apparently Shadow Copy is a Windows tool often used for backups?
+- Moving on to the next section of the report. The previous sections were about initial entry and tools for executing commands in the target environment. Next up is persistence: how the attacker is able to establish a foothold in the environment long-term?
+- Seems like, often, the attacker sets up a scheduled task (windows equivalent of a cron job). Note, this often means the malware file itself is publicly visible as a scheduled task, so you can scrutinize scheduled tasks to look for anomalies. The same goes for tasks which run on startup or logon (in the case of Windows, tasks which run on logon are called Run Keys, and live in the Registry). The attackers may do some basic protections like hiding the file as well, so don't forget to check for that.
+- Attackers also use BITS for a similar purpose, and jobs run by bitsadmin are pretty hard to detect as they are stored in a database, not on disk. However, you can potentially look at the command line arguments often used by attackers for bitsadmin, such as /create and /download and /transfer.
+- Typically, an attacker will want/need to create an admin account. Keep an eye out for new account creation, particularly if it's done on the command line (the real sysadmins will typically use a GUI).
+- Two tools that seem really popular in ransomware are CobaltStrike and Empire PowerShell, they seem to be mentioned very frequently.
+- Attackers often masquerade as a Windows service. In that situation, they often choose an innocuous process name like "WindowsProtectionService" or "Java Updater". Be suspicious of any Windows Services which are in an open writeable directory, or that are unsigned, or are created by a user in an unusual manner.
+- Finished the Persistence section, though I should definitely learn more about CobaltStrike and Empire PowerShell.
+
+
+
 
 
