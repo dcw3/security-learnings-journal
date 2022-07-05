@@ -142,6 +142,9 @@ Mon, Jul 4:
 - Two tools that seem really popular in ransomware are CobaltStrike and Empire PowerShell, they seem to be mentioned very frequently.
 - Attackers often masquerade as a Windows service. In that situation, they often choose an innocuous process name like "WindowsProtectionService" or "Java Updater". Be suspicious of any Windows Services which are in an open writeable directory, or that are unsigned, or are created by a user in an unusual manner.
 - Finished the Persistence section, though I should definitely learn more about CobaltStrike and Empire PowerShell.
+- Okay I read a little about CobaltStrike Beacon. Seeing as it provides important capabilities like keystroke recording, running shell scripts, taking screenshots, downloading files, and more, I can see why the ransomware groups are using it so extensively lol. It seems incredibly convenient as a tool.
+- Next up in Kaspersky's ransomware TTK's outline is Privilege Escalation. While Kaspersky outlines a few example methods, the detection rules they suggest seem like they would probably be quickly outdated as the particular privilege escalation tactics may vary over time? The key seems to be that some form of privilege escalation attack will occur, through exploiting known Windows bugs.
+- I looked through the 2014 privilege escalation tutorial for Windows from FuzzySecurity: https://www.fuzzysecurity.com/tutorials/16.html It was very nicely organized and it was interesting that the strategy seems something like "try a lot of quick things to see if the local admins messed up" and also "check the patch history and then check if any known exploits are still unpatched". This makes sense to me.
 
 
 
