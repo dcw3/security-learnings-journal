@@ -146,7 +146,16 @@ Mon, Jul 4:
 - Next up in Kaspersky's ransomware TTK's outline is Privilege Escalation. While Kaspersky outlines a few example methods, the detection rules they suggest seem like they would probably be quickly outdated as the particular privilege escalation tactics may vary over time? The key seems to be that some form of privilege escalation attack will occur, through exploiting known Windows bugs.
 - I looked through the 2014 privilege escalation tutorial for Windows from FuzzySecurity: https://www.fuzzysecurity.com/tutorials/16.html It was very nicely organized and it was interesting that the strategy seems something like "try a lot of quick things to see if the local admins messed up" and also "check the patch history and then check if any known exploits are still unpatched". This makes sense to me.
 
+Thu, Jul 14
 
+- Reading further into Kaspersky's Privilege Escalation section, it sounds like Microsoft server products just regularly have zero day vulnerabilities that allow privilege escalation (e.g. Exchange Server). So it doesn't seem very feasible to prevent privilege escalation in these products: better to focus on other areas of defense perhaps?
+- It can be worth monitoring when an unusual permission or access is granted to a process, though.
+
+Fri, Jul 15
+
+- Every ransomware group uses existing Windows commands to download and run their code, in order to avoid restrictions and antivirus. Presumably, antivirus and monitoring are more lenient when the program being executed is a Windows program itself. Examples include mshta.exe which can download and execute Internet Explorer scripts, and msiexec.exe which can download and execute installer scripts.
+- Futhermore, exploiting these scripts is pretty easy once you've figured out a way, because it can be automated into a script.
+- As a defender, watch out for unusual behavior from Windows-signed programs: downloading and executing code, or executing code from a public-writable directory, spawning shell, opening unusual filetype, etc.
 
 
 
