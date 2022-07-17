@@ -157,5 +157,14 @@ Fri, Jul 15
 - Futhermore, exploiting these scripts is pretty easy once you've figured out a way, because it can be automated into a script.
 - As a defender, watch out for unusual behavior from Windows-signed programs: downloading and executing code, or executing code from a public-writable directory, spawning shell, opening unusual filetype, etc.
 
+Sun, Jul 17
+
+- Another common pattern is process hollowing: start a (typically Windows system) process and then inject malware into the memory location of the process. This can avoid a lot of detection methods because often SIEM solutions are configured to ignore Windows system processes. Common processes to inject into are regedit.exe and werfault.exe.
+- The CreateRemoteThread event in Sysmon logs can indicate injection is occurring?
+- SIEM logs aren't as useful for detecting process injection.
+- Typically, the easiest way for ransomware to bypass system firewall is to modify it directly with a command like netsh or NetFirewallRule. So it can definitely be worth adding a detection rule monitoring when these commands are executed. (Note that there are more subtle ways to get around firewalls though, so don't assume this is foolproof detection.)
+- Typically, a ransomware will aim to disable security features like Raccine and Windows Defender. Therefore, any time these are disabled or modified by system, it is a red alert for suspicious activity.
+- Ransomware also typically tries to masquerade as legitimate processes. Watch out for cases where a system utility is launched from an atypical directory, or a file is created with the same name as a system file, or unusual system utilities launch flags.
+
 
 
