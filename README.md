@@ -166,5 +166,18 @@ Sun, Jul 17
 - Typically, a ransomware will aim to disable security features like Raccine and Windows Defender. Therefore, any time these are disabled or modified by system, it is a red alert for suspicious activity.
 - Ransomware also typically tries to masquerade as legitimate processes. Watch out for cases where a system utility is launched from an atypical directory, or a file is created with the same name as a system file, or unusual system utilities launch flags.
 
+Mon, Jul 18
+
+- Attackers also typically delete their own files after execution, and also try to clear system logs. There are some methods to try and restore system logs after deletion, but I did not look into them.
+
+Thu, Jul 21
+
+- If you're relying on pattern matching in scripts to detect malicious behavior, keep in mind that attackers will often use some form of encoding (e.g. base 64) to obfuscate their scripts.
+- However, you may be able to detect obfuscation itself as malicious.
+- That concludes the section on Defense Evasion. To summarize, attackers typically try to hide, delete, or obfuscate their programs. When they need something to run regularly, they will typically use process hollowing or other ways to look similar to a system process. Keep an eye out for processes which look like system processes, but with some unusual factor such as running location or what kind of requests it is making.
+- The next section is on Credential Access. It seems like LSASS memory (a Windows memory store which includes encrypted passwords and hashes of passwords (NT and LM hashes)). Note that multiple Windows processes can dump LSASS memory as long as they are running in privileged account, including Task Manager. Note that it seems like tools like Mimikatz continue to work for this purpose as well.
+- However, these techniques do seem to leave a Sysmon log behind, which can be used for detection (Process Accessed log).
+- I don't fully understand the mitigations Kaspersky recommends in this section so I'll need to look more into it.
+
 
 
