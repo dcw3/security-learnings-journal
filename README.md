@@ -179,5 +179,17 @@ Thu, Jul 21
 - However, these techniques do seem to leave a Sysmon log behind, which can be used for detection (Process Accessed log).
 - I don't fully understand the mitigations Kaspersky recommends in this section so I'll need to look more into it.
 
+Fri, Jul 22
+
+- Another common method for getting credentials, besides LSASS memory, is exfiltrating them from the browser. Apparently this is fairly easy (just need to look in the Program Files in the correct spot).
+- Brute force is also extremely common. So absolutely set rate limits on all password tries, e.g. per IP.
+- That concludes the section on Credential Access. Seems like browsers, LSASS, or brute force are all common and fairly intuitive (except for LSASS, which I still don't fully understand).
+- The next section is Discovery: how do attackers find attack targets further in the network and how do they decide where to move next? Notably, every technique in this section was used by every ransomware group, so there is a lot of shared techniques here.
+- One great, simple discovery tool is checking existing connections on the host machines. Example commands include "netstat -ano", "net session", "net use", "query session".
+- A related method is using system info to find other systems. For example, "arp -a" is used by EVERYONE. It shows you the system ARP cache which maps IP's to MAC's. Another common command is "net view /all". Some tools like Lockbit and BloodHound and Powersploit also help with finding remote system.
+- Same goes for shared network drives. In general, any info about the network structure is useful. The relevant commands are "net share" and "net view".
+- Similarly, attackers will want to look at what accounts are available so they know what privileged accounts they can target. Example commands include "whoami /groups", "net group ..." etc.
+- If you see a process searching for files like "*.pdf", that's a major red flag for ransomware. They will often try and do file discovery with the Windows API, so an EDR(?) solution may be necessary. Not sure I understand this part, though.
+- Finally, one last thing I wasn't aware of at all, is that ransomware will try and terminate all other processes when encrypting files. The reason is, it would be bad if a file was locked by another program and therefore wasn't encrypted. So keep an eye out for process enumeration like "tasklist.exe"
 
 
