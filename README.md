@@ -192,4 +192,12 @@ Fri, Jul 22
 - If you see a process searching for files like "*.pdf", that's a major red flag for ransomware. They will often try and do file discovery with the Windows API, so an EDR(?) solution may be necessary. Not sure I understand this part, though.
 - Finally, one last thing I wasn't aware of at all, is that ransomware will try and terminate all other processes when encrypting files. The reason is, it would be bad if a file was locked by another program and therefore wasn't encrypted. So keep an eye out for process enumeration like "tasklist.exe"
 
+Sat, Jul 23
+
+- RDP is often used for lateral movement. It should be disabled wherever possible, and where enabled, the list of accounts which are authorized for RDP should be monitored and limited.
+- For external RDP servers, always require multi-factor authentication, use firewall rules, and rate limiting. Also alert on suspicious connection times or locations.
+- Kaspersky notes that some common tools for lateral file transfers include psexec, SMB, bitsadmin, and AnyDesk. However, while you can monitor these and disable them when not needed, in general it probably makes more sense to try and guard the admin credentials and privileges instead, because once an attacker has those, a variety of tools can be used for lateral file transfer.
+
+
+
 
