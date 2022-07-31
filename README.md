@@ -198,6 +198,28 @@ Sat, Jul 23
 - For external RDP servers, always require multi-factor authentication, use firewall rules, and rate limiting. Also alert on suspicious connection times or locations.
 - Kaspersky notes that some common tools for lateral file transfers include psexec, SMB, bitsadmin, and AnyDesk. However, while you can monitor these and disable them when not needed, in general it probably makes more sense to try and guard the admin credentials and privileges instead, because once an attacker has those, a variety of tools can be used for lateral file transfer.
 
+Sun, Jul 24
+
+- Still, detection rules are still useful. The behavior of ransomware and attackers will typically be different from normal admins.
+- Attackers commonly use SMB (network shared drives/files) to transfer malware across computers. So if an executable file is transferred, or many queries are being sent (looks like an adversary scanning the network for example) then that's a red flag.
+
+Sat, Jul 30
+
+- Today was reading about defense evasion on Red Canary's blog. https://redcanary.com/blog/defense-evasion-why-is-it-so-prominent-how-can-you-detect-it/
+- I went in with the idea that adversaries would be selectively clearing logs or manipulating event loggers such that only the adversary's actions aren't logged. However, at least in this blog (originally published in 2019, updated in 2022) the techniques used were fairly "crude" in comparison.
+- The main techniques I noted in the blog were obfuscation (the malware is encrypted at rest), masquerading (looking like a system process), disabling antivirus, and sandbox detection (if you detect you're in a VM or sandbox, don't run so the defender can't analyze you). Finally, it was mentioned that the adversary might try to clear all event logs (not selectively prune logs, if that is possible). However, in the MITRE entry on this, it's noted that this can be mitigated by shipping/forwarding logs to multiple endpoints.
+- I'm still pretty curious on whether log pruning or preventing logging of your specific actions is possible, and if not, why not. It seems like the ideal method of evasion.
+- The blog did mention several tools which you can use to test your own defenses regarding defense evasion, which is cool.
+- The next section in Kasperky report is on Command and Control servers. It's pretty vague, but the gist is that attackers run their own servers for two primary purposes: they may have the victim machine download malware from the C&C server, or have the victim machine upload data to the C&C server.
+- The next section is on exfiltration (which is useful not just for ransomware attacks, but for general data stealing hackers). For ransomware groups, exfiltration allows them to blackmail the victim, or ensures that they can restore encrypted data.
+- Interestingly, when exfiltrating data the attackers will exclude certain data types, like .py, .png, .dll, etc. Presumably to save time/space.
+- For the LockBit group, they have a hardcoded list of C&C IP addresses they reach out to, they set up a TCP connection and send the data directly.
+- RedLine Stealer is a common exfiltrator program.
+- Keep an eye out for anomalous network behavior, and for processes initiating connections to external IP's.
+- Attackers often use cloud storage servers like mega.nz, rclone, MegaSync, file.io, etc. If you're seeing unusually high network traffic to any cloud storage site, it's probably a sign of exfiltration.
+- Attackers are always going to delete the Windows automatic backups, such as shadowcopy and BCDEdit. Only offline backups are a guarantee against deletion, and they should always be used.
+- If a large number of processes are stopped simultaneously, it may be a sign that the ransomware is stopping programs en-masse to start encrypting files (since it cannot encrypt files which are in-use by other programs).
+- And that wraps up the step-by-step section of the report. Next sections are on Mitigations.
 
 
 
