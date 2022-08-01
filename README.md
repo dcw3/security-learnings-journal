@@ -221,5 +221,20 @@ Sat, Jul 30
 - If a large number of processes are stopped simultaneously, it may be a sign that the ransomware is stopping programs en-masse to start encrypting files (since it cannot encrypt files which are in-use by other programs).
 - And that wraps up the step-by-step section of the report. Next sections are on Mitigations.
 
+Sun, Jul 31
+
+- Almost all done with Kaspersky report! The final part I'm reading is about mitigations and preparations.
+- The last section (but the first I read) goes over how to prepare for an eventual breach. Most of this sounds like common sense planning, but it's helpful to spell out all of the important plans to have in place.
+- The important planning to do includes: What are all of our important data assets? Where do they live? What are our backups like and what are the exact steps to restore from backups? How long would it take to restore from backups?
+- If a successful ransomware attack occurs, what are our communications to external and internal people? Do we have an agreed upon plan for how to respond to ransom/blackmail requests? Do we have any legal obligations in regard to data or ransomware?
+- If an attack occurs and we lose acccess to our computers, will we still have access to the important protocols and data in paper or other form?
+- Simulate a ransomware attack, including recovering from backups, communicating to others and not having access to computers. There is no better way to assess your preparation.
+- The 3-2-1 plan for backups is: 3 copies of the data, in 2 different types of media, with at least one off-site backup (i.e. in cold storage or similar).
+
+- For preventing intrusion in the first place, Kaspersky recommends a variety of steps. These include blocking known malicious sites, disabling RDP or other remote access wherever possible, keeping up to date in patches, using principle of least privilege (e.g. zero trust networks), using multi-factor auth, monitoring network traffic in your network perimeter, using sandboxes for external email attachments, if possible, having strict firewall rules (e.g. only allow connections to known good IP addresses).
+- To summarize the recommendations for preventing malware from executing, Kaspersky recommends: user training (don't click that link!), app locking/permissioning (e.g. AppLocker, which I'm not familiar with), disabling macros in Office or only allowing officially signed macros from trusted certs (duh), disabling USB/removable media or auto-execution from these sources, and obviously antivirus and regular software patching.
+- I'm not yet familiar with all of the subjects Kaspersky discusses in their section on mitigating exploits and lateral movement. I think for now I will make notes to study these.
+- The first topic is preventing credential leaking from tools like Mimikatz. Steps include enabling Credential Guard, monitoring for Mimikatz execution, disabling wdigest, but it seems like it's still possible to defeat Credential Guard by installing a custom authentication handler. So perhaps monitoring or disabling such installation would be good as well, but I'm not familiar with how to do so (if possible).
+
 
 
