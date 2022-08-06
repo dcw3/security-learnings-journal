@@ -236,5 +236,15 @@ Sun, Jul 31
 - I'm not yet familiar with all of the subjects Kaspersky discusses in their section on mitigating exploits and lateral movement. I think for now I will make notes to study these.
 - The first topic is preventing credential leaking from tools like Mimikatz. Steps include enabling Credential Guard, monitoring for Mimikatz execution, disabling wdigest, but it seems like it's still possible to defeat Credential Guard by installing a custom authentication handler. So perhaps monitoring or disabling such installation would be good as well, but I'm not familiar with how to do so (if possible).
 
+Sat, Aug 6
+
+- Wrapping up the report by finishing discussing Kaspersky's recommendations on preventing lateral movement. It seems like it's widely recommended to use the least privilege system and have a tiered set of privileged accounts so you aren't using a system-wide admin for most admin tasks.
+- Notably (and a bit funnily) Kaspersky recommends identifying high-risk targets such as open devices, services, or easily compromised users, and restricting their access as much as possible. I guess this makes sense: don't give someone who doesn't understand sysadmin duties and security, access to an admin account in any form.
+- Apply patches regularly, and enable secure boot mechanisms (which make it harder to persist malware).
+- Application control policies are more secure because only authorized apps are allowed to be executed. However, there is a significant productivity downside to this kind of policy because users may be trying to install productivity tools.
+- Isolating and partitioning your network are very important. Always separate critical business pieces and apply good network security controls to them.
+- Just read a bit about avoiding honeypots. It seems like some basic advice is to listen on traffic and avoid scanning services which aren't talking to other servers. You can also look at the netBIOS name records and see which machines your machine has talked to recently.
+- Honeypots are another recommended form of intrusion prevention/detection.
+- Okay I think that wraps up the Kaspersky report. There's still a lot of terms from the report that I'm not familiar with (for example I'm pretty unfamiliar with obtaining credentials and using Empire Powershell, Mimikatz, CobaltStrike, and others. I'm also pretty unfamiliar with the defense tools they talk about like network monitoring, app locking, user privilege control, patch management, and even firewalls I'm only moderately familiar with!) but for now I think I'll move on to something else to learn more.
 
 
