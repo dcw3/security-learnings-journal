@@ -7,3 +7,10 @@ Jan 15
 
 Jan 18
 - Spent some time watching Network+ videos on Udemy today. Some notable learnings include that port forwarding/mirroring is used on switches to duplicate traffic to enable surveillance and analysis, and VLAN's are relatively easy to set up and a very convenient and powerful way to segment your internal network. In fact, I think VLAN's is probably what the blog post meant when recommending setting up different network zones, but I will have to do some more learning before I'm sure of that.
+
+Jan 19
+- Spent some more time on Network+ videos, learned about Wifi standards. I didn't know that unidirectional antenna are used to help secure wireless networks by reducing the amount of external areas where the signal is reaching.
+
+Jan 20
+- I learned that if your ipconfig shows 169.254.x.x, that's an automatic IP address set by your device when DHCP fails. So DHCP failure can be diagnosed in this way.
+- I also had no idea about IP multicast and broadcast.
