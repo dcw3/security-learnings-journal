@@ -14,3 +14,10 @@ Jan 19
 Jan 20
 - I learned that if your ipconfig shows 169.254.x.x, that's an automatic IP address set by your device when DHCP fails. So DHCP failure can be diagnosed in this way.
 - I also had no idea about IP multicast and broadcast.
+
+Jan 21
+- Learned about IPv6 addresses, I didn't know they were always 8 segments of 4 hexadecimal digits, and that :: means abbreviating zeros.
+- Also learned that IPv6 uses Neighbor Discovery Protocol to discover hosts and routers on the local network, mitigating the need for the manual configuration of default gateway IP address on the machine.
+
+Jan 25
+- Been a busy few days. Watched some networking videos on the train. Got to review basic routing protocols such as BGP, and learned about interior networking protocols before promptly forgetting most of it, except that OSPF is the commonly used one.
