@@ -21,3 +21,6 @@ Jan 21
 
 Jan 25
 - Been a busy few days. Watched some networking videos on the train. Got to review basic routing protocols such as BGP, and learned about interior networking protocols before promptly forgetting most of it, except that OSPF is the commonly used one.
+
+Feb 1
+- I've been going through the Rust tutorials. I set up two network zones in my Azure playground, with a DMZ and a default network zone. Next thing I want to try is setting up my personal website. I decided I may as well learn something new while doing this, so I'm going to try using Rust in the website. I'm currently on chapter 6 of the Rust tutorial.
